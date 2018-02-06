@@ -1,0 +1,43 @@
+Server FOr Hackers Notes
+- To skip SSH key auth on server and use Password:
+ssh -0 "PubkeyAuthentication=no" root@ip_goes_here
+
+- To sign in without password:
+1) Create a local pub and private ssh key
+2) add pub key to server .ssh/authorized_keys file
+
+- To create user
+adduser whyzhi
+
+- To swtich user
+sudo su whyzhi
+
+- To find out what group the user is in
+group whyzhi
+
+- To change user permission, -G means appens permission, -g means replace, -a means add
+usermod -Ga <admin> whyzhi
+
+- To edit visudoer file
+visudo
+
+- To make sure no one logs in as root directly
+sudo vim /etc/ssh/sshd_config
+edit this file:
+PasswordAuthentication no
+PermitRootLogin no
+
+sudo service ssh restart
+
+- Local SSH ssh configuration
+touch .ssh/config
+to use keychain it do:
+Host *
+    UseKeychain yes
+
+To auto login with ssh myserverstart
+Host myserverstart
+    HostName IP GOES ip_goes_here
+    User username like root
+    IdentityFile ~/.ssh/id_private_key
+    IdentitiesOnly yes
