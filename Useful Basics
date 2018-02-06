@@ -1,0 +1,12 @@
+- SSH Daemon Config File is located at /etc/ssh/sshd_config
+- ls lah gives human readable file size
+- to rerun certain history command do !47 and it'll run 47th command from history
+- to display current server distribution: lsb_release -a 
+- Linux info: uname -a
+- 64bit or 32bit: uname -i
+
+- File system human readable df -h
+- Free memory or ram: free -mh
+
+- get a nicer version of top: sudo apt-get install -y htop
+- in htop, press f4 to search/filter/kill processes
